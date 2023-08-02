@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "title":"Fast X",
+        "url":"https://www.themoviedb.org/t/p/original/c7C3owsl09O9kO6XH2UQF89yuLw.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":2,
+        "title":"John wick 4",
+        "url":"https://www.themoviedb.org/t/p/original/h34UytWk6nw91wDt2Ts3UYsRWqe.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":3,
+        "title":"The Mother",
+        "url":"https://www.themoviedb.org/t/p/original/vnRthEZz16Q9VWcP5homkHxyHoy.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":4,
+        "title":"Iron Man",
+        "url":"https://www.themoviedb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":5,
+        "title":"The Flash",
+        "url":"https://www.themoviedb.org/t/p/original/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":6,
+        "title":"Auaman",
+        "url":"https://www.themoviedb.org/t/p/original/uCg2HPY7rBCrh1YGpXam9LH1xKZ.jpg",
+        "duration":" 90 mins"
+    },
+    {
+        "id":6,
+        "title":"Spider-Man 3",
+        "url":"https://www.themoviedb.org/t/p/original/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg",
+        "duration":" 90 mins"
+    }
+
+
+]

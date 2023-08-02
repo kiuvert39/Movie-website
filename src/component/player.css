@@ -1,0 +1,145 @@
+ body{
+    background-color:rgb(43, 43, 43);
+    color:whitesmoke
+} 
+.mainCard{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.videoCard{
+    color:white;
+    max-height: 18rem;
+    display: start;
+    border-radius: 7px;
+    overflow: hidden;
+    margin-top: 3rem;;
+    margin-left:2rem;
+    max-width: 18rem;
+    background-color: rgb(83, 79, 79);
+    
+}
+
+.title{
+    font-size:1.4rem;
+    padding-left: 1rem;
+}
+.title:hover{
+    cursor:pointer;
+    color:rgb(60, 60, 173)
+}
+.Release{
+    color:gray;
+    font-size:1rem;
+    padding-left: 1rem;
+}
+.player1{
+    color:white;
+}
+
+.selected{
+   margin-left:8rem;
+   position:static;
+   top:0px;
+   
+}
+
+@media (width <= 576px) { 
+    .videoCard{
+    color:white;
+    max-height: 60rem;
+    display: start;    
+    background-color: rgb(83, 79, 79);
+    margin-right: 3px;
+    margin-left:3px;
+    margin-top: 3rem;
+    width: 6rem;
+    
+ }
+    .title{
+        font-size:1.4rem;
+        padding-left: 0rem;
+    }
+    .Release{
+        color:gray;
+        font-size:1rem;
+        padding-left: 0.4rem;
+    }
+}
+.card-width{
+    width:220px;
+    height:280px;
+}
+
+
+.overlay {
+    background: rgba(105, 26, 26, 0.8);
+}
+.modal-content {
+    position: relative;
+    top: 20%;
+    right: -15%;
+    transform: translate(-50%, -50%);  
+    color: rgb(193, 29, 29);
+    background-color:white;
+}
+.SRCh{
+    position: relative;
+    top: 80px;
+   }
+
+.SRCh1{
+    margin-left: 230px;
+    padding-left: 35px;
+}
+.req-main{
+    position:relative;
+    left:20rem;
+    top:1rem;
+    display:block;
+    width: 53%;
+    height: 30rem;
+    background-color: gray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;   
+
+}
+
+.color1{
+    color:whitesmokel;
+}
+
+/* .modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200);
+    position: relative;
+    right: 5rem;
+    
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .modalContainer {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+ .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  } */
