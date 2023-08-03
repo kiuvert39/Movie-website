@@ -88,8 +88,8 @@
    }
 
 .SRCh1{
-    margin-left: 230px;
-    padding-left: 35px;
+    margin-left: 12rem;
+    padding-left: 13rem;
 }
 .req-main{
     position:relative;
@@ -118,28 +118,3 @@
     color:whitesmokel;
 }
 
-/* .modalBackground {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(200, 200, 200);
-    position: relative;
-    right: 5rem;
-    
-    justify-content: center;
-    align-items: center;
-  } 
-
-  .modalContainer {
-    flex: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.7rem;
-    text-align: center;
-  }
- .titleCloseBtn button {
-    background-color: transparent;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-  } */
