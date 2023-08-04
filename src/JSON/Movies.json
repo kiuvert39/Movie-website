@@ -26,19 +26,19 @@
     {
         "id":5,
         "title":"Merlin",
-        "url":"https://th.bing.com/th/id/OIP.SqBdHHv9nv799MpMGsGFqwHaD3?pid=ImgDet&w=1200&h=627&rs=1",
+        "url":"https://m.media-amazon.com/images/M/MV5BZTBjYjM3ZjItZTI1MS00ODZhLWFhZDgtODgxMmMzN2JlOTExXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
         "duration":" 90 mins"
     },
     {
         "id":6,
-        "title":"Merlin",
-        "url":"https://th.bing.com/th/id/OIP.SqBdHHv9nv799MpMGsGFqwHaD3?pid=ImgDet&w=1200&h=627&rs=1",
+        "title":"The Witcher",
+        "url":"https://m.media-amazon.com/images/M/MV5BMDEwOWVlY2EtMWI0ZC00OWVmLWJmZGItYTk3YjYzN2Y0YmFkXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg",
         "duration":" 90 mins"
     },
     {
-        "id":6,
-        "title":"Lord of the Ring",
-        "url":"https://th.bing.com/th/id/OIP.SqBdHHv9nv799MpMGsGFqwHaD3?pid=ImgDet&w=1200&h=627&rs=1",
+        "id":7,
+        "title":"The Mummy",
+        "url":"https://m.media-amazon.com/images/M/MV5BOTJiYjBhZDgtMjhiOC00MTIzLThlNGMtMmI1NjIwM2M3YTI5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
         "duration":" 90 mins"
     }
 
