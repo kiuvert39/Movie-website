@@ -1,16 +1,17 @@
 import React from 'react'
-import data from '../JSON/Movies.json'
-import "../component/player.css"
+import anime from '../JSON/AnimatedVideos'
 import Button from 'react-bootstrap/Button';
+import "../component/player.css"
 
-const Movies = () => {
+const AnimatedVideos = () => {
   return (
-    <div className='moveleft'>
-       <h2>Movies</h2>
-       <div className=' p-0  flex-wrap d-flex gap-2'>
-             {data.map((value) =>{
+  <>  
+   < div className='moveleft'>
+      <h2>Animated Videos</h2>
+    <div className=' p-0  flex-wrap d-flex gap-2'>
+             {anime.map((value) =>{
                 return(
-                    <div key={value.id} className='moveT'>
+                    <div key={value.id}  >
                         <img src={value.url} alt="error image"  className='card-width'/>
                         <h4>{value.title}</h4>
                         <p>{value.duration}</p>
@@ -18,9 +19,10 @@ const Movies = () => {
                     </div>
                 )
              })}
-             </div>
-    </div>
+       </div>
+       </div>
+  </>
   )
 }
 
-export default Movies
+export default AnimatedVideos

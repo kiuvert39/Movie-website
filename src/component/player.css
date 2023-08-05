@@ -1,109 +1,27 @@
  body{
     background-color:rgb(43, 43, 43);
-    color:whitesmoke
+    color:whitesmoke;
 } 
-.mainCard{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
+.fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: 2px;
 }
-.videoCard{
-    color:white;
-    max-height: 18rem;
-    display: start;
-    border-radius: 7px;
-    overflow: hidden;
-    margin-top: 3rem;;
-    margin-left:2rem;
-    max-width: 18rem;
-    background-color: rgb(83, 79, 79);
-    
+@media screen and (max-width: 576px) { 
+   .mobile {
+       flex-direction: column;
+   }
 }
-
-.title{
-    font-size:1.4rem;
-    padding-left: 1rem;
-}
-.title:hover{
-    cursor:pointer;
-    color:rgb(60, 60, 173)
-}
-.Release{
-    color:gray;
-    font-size:1rem;
-    padding-left: 1rem;
-}
-.player1{
-    color:white;
-}
-
-.selected{
-   margin-left:8rem;
-   position:static;
-   top:0px;
+.moveleft{
+    margin-right:0;
+    margin-top: 5rem;
+    margin-left: 2.5rem;
    
 }
-
-@media (width <= 576px) { 
-    .videoCard{
-    color:white;
-    max-height: 60rem;
-    display: start;    
-    background-color: rgb(83, 79, 79);
-    margin-right: 3px;
-    margin-left:3px;
-    margin-top: 3rem;
-    width: 6rem;
-    
- }
-    .title{
-        font-size:1.4rem;
-        padding-left: 0rem;
-    }
-    .Release{
-        color:gray;
-        font-size:1rem;
-        padding-left: 0.4rem;
-    }
-}
 .card-width{
-    width:220px;
-    height:280px;
-}
-
-
-.overlay {
-    background: rgba(105, 26, 26, 0.8);
-}
-.modal-content {
-    position: relative;
-    top: 20%;
-    right: -15%;
-    transform: translate(-50%, -50%);  
-    color: rgb(193, 29, 29);
-    background-color:white;
-}
-.SRCh{
-    position: relative;
-    top: 80px;
-   }
-
-.SRCh1{
-    margin-left: 12rem;
-    padding-left: 13rem;
-}
-.req-main{
-    position:relative;
-    left:20rem;
-    top:1rem;
-    display:block;
-    width: 53%;
-    height: 30rem;
-    background-color: gray;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    max-width:220px;
+    max-height:280px;
 }
 
 .stack{
@@ -111,10 +29,29 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 2rem;   
-
 }
-
-.color1{
-    color:whitesmokel;
+@media screen and (max-width: 488px) {
+    .card-width{
+        max-width:120px;
+        max-height:180px;
+        display: grid;
+        grid-gap: 30px;
+       grid-template-columns: repeat(2,1fr);
+    }
+    .moveleft{
+        margin-top: 0%;
+        margin-left: 0rem;
+    }
+    .moveleft{
+        margin-right:0;
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+   
 }
-
+.footer,.footer-text{
+   margin-top:4rem;
+   margin-left:3rem;
+   font-size:48px;
+   opacity: 0.5;
+}
