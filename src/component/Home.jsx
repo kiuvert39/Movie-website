@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import "../component/player.css"
-import data from "./Recommendation.json"
-import Seriese from './Seriese.jsx'
+import data from "../JSON/Recommendation.json"
 import Button from 'react-bootstrap/Button';
+import LatestMovies from './LatestMovies.jsx';
 
 
 
 function Home() {
   return (
-    <div>     
-      <Seriese/>
+    <div className="d-flex justify-content-center mobile">     
+      <LatestMovies/>
       <Recommendations/>
     </div>
   )
@@ -25,7 +25,7 @@ export function MovieCard(){
            <div className='m-1 p-0 flex-wrap d-flex gap-2 v-card'>
             {data.map( (value) =>{
                 return(
-                  <div>
+                  <div key={value.id}>
                     <img src={value.url} alt="" className='card-width'/>
                     <h4>{value.title}</h4>
                     <p>{value.duration}</p>

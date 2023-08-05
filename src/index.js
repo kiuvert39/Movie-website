@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Routs from './component/routs';
+import Routes from './component/routes';
 
 
 
@@ -9,7 +9,7 @@ import Routs from './component/routs';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>      
-       <Routs/>    
+       <Routes/>    
   </React.StrictMode>
 );
 

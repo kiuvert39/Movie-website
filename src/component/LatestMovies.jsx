@@ -1,15 +1,15 @@
 import React from 'react'
-import serise from "./Seriese.json"
+import latestMovies from "../JSON/LatestMovies.json"
 import Button from 'react-bootstrap/Button';
 
-const Seriese = () => {
+const LatestMovies = () => {
   return (
     <div>
-            <h3 className='p-2'>Seriese Movies</h3>
+            <h3 className='p-2'>Latest Movies</h3>
              <div className='m-1 p-0 flex-wrap d-flex gap-2'>
-             {serise.map( (value) =>{
+             {latestMovies.map((value) =>{
                 return(
-                    <div>
+                    <div key={value.id}>
                         <img src={value.url} alt="error image"  className='card-width'/>
                         <h4>{value.title}</h4>
                         <p>{value.duration}</p>
@@ -23,4 +23,4 @@ const Seriese = () => {
   )
 }
 
-export default Seriese
+export default LatestMovies
