@@ -5,9 +5,9 @@ import {HiOutlineStar} from 'react-icons/hi'
 
 const LatestMovies = () => {
   return (
-    <div className='moveleft'>
+    <div >
             <h3 className='p-2'>Latest Movies</h3>
-             <div className='m-1 p-0 flex-wrap d-flex gap-2'>
+             <div className=' p-0 flex-wrap d-flex gap-2'>
              {latestMovies.map((value) =>{
                 return(
                     <div key={value.id}>
