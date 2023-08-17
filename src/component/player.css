@@ -23,13 +23,31 @@
     max-width:220px;
     max-height:280px;
 }
-
+.m-top {
+    margin-top: 8%;
+} 
 .stack{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 2rem;   
 }
+.no-decoration {
+    text-decoration: none;
+}
+.input-style {
+    border-radius: 10px;
+    outline: none;
+    margin: 5px;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.labeler {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
 @media screen and (max-width: 488px) {
     .card-width{
         max-width:120px;
@@ -47,18 +65,6 @@
         margin-top: 5rem;
         margin-left: 2rem;
     }
-   
+
 }
 
-.post{
-    margin-top:5rem;
-    
-    
-}
-
-.footer,.footer-text{
-   margin-top:4rem;
-   margin-left:3rem;
-   font-size:48px;
-   opacity: 0.5;
-}

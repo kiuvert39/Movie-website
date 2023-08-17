@@ -1,10 +1,11 @@
 import React from 'react'
 import "../component/player.css"
+
 function Footer() {
   return (
     <div>
-        <div className='footer'>
-          <h1 className='footer-text'>Movie Zone</h1>
+        <div className="bg-dark p-3 mt-3 d-flex justify-content-center">
+          <h1 className="fs-1 opacity-25">MovieZone</h1>
         </div>
     </div>
   )
