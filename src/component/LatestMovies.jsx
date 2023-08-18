@@ -1,7 +1,6 @@
 import React from 'react'
 import latestMovies from "../JSON/LatestMovies.json"
 import Button from 'react-bootstrap/Button';
-import {HiOutlineStar} from 'react-icons/hi'
 
 const LatestMovies = () => {
   return (

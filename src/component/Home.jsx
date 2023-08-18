@@ -27,9 +27,9 @@ export function MovieCard(){
                 return(
                   <div key={value.id}>
                     <img src={value.url} alt="" className='card-width'/>
-                    <h4>{value.title}</h4>
-                    <p>{value.duration}</p>
-                    <Button variant="outline-success">Download</Button>
+                      <h4>{value.title}</h4>
+                      <p>{value.duration}</p>
+                      <Button variant="outline-success">Download</Button>
                   </div>
                 )
             })}

@@ -1,65 +1,57 @@
-import React from "react";
+import React, { useState } from 'react'
+import { db } from '../Firebase Config/firebase'
+import { collection, addDoc } from "firebase/firestore";
+import { useEffect } from 'react'
 import "./player.css";
 
-const Post = () => {
+function Post ()  {
+
+  const [movieTitle, setMovieTitle] = useState()
+  const [movieLength, setMovieLength] = useState()
+  const [movieFile, setMovieFile] = useState()
+  const [imagePoster, setImagePoster] = useState()
+
+  const moviesCollection = collection(db, "movies")
+
+  const uploadMovie = async () => {
+    try {
+          await addDoc(moviesCollection, {
+             title: movieTitle, 
+             duration: movieLength,
+             poster: imagePoster,
+             file: movieFile
+            })
+            window.location.reload(true)
+    } catch (err) {
+       console.error(err)
+    }
+  }
+
   return (
-    <section class="h-100 w-100 gradient-form main post">
-      <div class="container py-5 h-100 pl-4">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10 ">
-            <div class="card rounded-3 text-black">
-              <div class="row g-0">
-                <div class="col-lg-6">
-                  <div class="card-body p-md-5 mx-md-4">
-                    <form method="Post">
-                      <div class="form-outline mb-4">
-                        <input
-                          type="text"
-                          id="form2Example11"
-                          class="form-control"
-                          placeholder="Movie Name"
-                        />
-                        <label class="form-label" for="form2Example11">
-                          Movie Name
-                        </label>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <input
-                          type="text"
-                          id="form2Example22"
-                          class="form-control"
-                          placeholder="Duration"
-                        />
-                        <label class="form-label" for="form2Example22">
-                          Duration
-                        </label>
-                      </div>
-                      <div class="form-outline mb-4">
-                        <input
-                          type="text"
-                          id="form2Example22"
-                          class="form-control"
-                          placeholder="Image Url"
-                        />
-                        <label class="form-label" for="form2Example22">
-                          Image Url
-                        </label>
-                      </div>
-
-                      <div class="d-flex align-items-center justify-content-center pb-4">
-                        <button type="button" class="btn btn-outline-primary">
-                          Submit
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="m-top d-flex flex-column justify-content-center align-items-center">
+        <div className="form-outline mb-4">
+          <label className="form-label labeler" htmlFor="Movie Name">Movie Name</label>                      
+          <input className="input-style" type="text" onChange={(e) => { setMovieTitle(e.target.value) }} placeholder="Movie Name"/>
         </div>
-      </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label labeler" htmlFor="Duration">Duration</label>
+          <input className="input-style" type="text" onChange={(e) => { setMovieLength(Number(e.target.value)) }} placeholder="Duration"/>
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label labeler" htmlFor="Image Url">Image Url</label>
+          <input className="input-style" type="text" onChange={(e) => { setImagePoster(e.target.value) }} placeholder="Image Url"/>
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label labeler" htmlFor="file">File</label>
+          <input className="input-style" type="text" onChange={(e) => { setMovieFile(e.target.value) }} placeholder="File"/>
+        </div>
+
+        <div>
+          <button className="btn btn-outline-primary" onClick={ uploadMovie }>Submit</button>
+        </div>
     </section>
   );
 };
