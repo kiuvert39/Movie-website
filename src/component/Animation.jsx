@@ -3,14 +3,14 @@ import { db } from '../Firebase Config/firebase'
 import { collection, addDoc } from "firebase/firestore";
 import "./player.css";
 
-function Post ()  {
+function Animation ()  {
 
   const [movieTitle, setMovieTitle] = useState()
   const [movieLength, setMovieLength] = useState()
   const [movieFile, setMovieFile] = useState()
   const [imagePoster, setImagePoster] = useState()
 
-  const moviesCollection = collection(db, "movies")
+  const moviesCollection = collection(db, "animation")
 
   const uploadMovie = async () => {
     try {
@@ -55,4 +55,6 @@ function Post ()  {
   );
 };
 
-export default Post;
+export default Animation;
+
+
