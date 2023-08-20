@@ -3,7 +3,7 @@ import "../component/player.css"
 import data from "../JSON/Recommendation.json"
 import Button from 'react-bootstrap/Button';
 import LatestMovies from './LatestMovies.jsx';
-
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -27,9 +27,7 @@ export function MovieCard(){
                 return(
                   <div key={value.id}>
                     <img src={value.url} alt="" className='card-width'/>
-                      <h4>{value.title}</h4>
-                      <p>{value.duration}</p>
-                      <Button variant="outline-success">Download</Button>
+                      <Link to="/Movies" style={{ textDecoration:"none" }}><h4>{value.title}</h4></Link>
                   </div>
                 )
             })}
