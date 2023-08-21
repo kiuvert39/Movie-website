@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import SearchMovies from "./SearchModal";
 import AnimatedVideos from './AnimatedVideos'
+import { Link } from "react-router-dom";
 
 
 function NavbarMain(){
@@ -20,9 +21,9 @@ function NavbarMain(){
           <Nav  className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll>
-           <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/Movies">Movies</Nav.Link>  
-            <Nav.Link href="/AnimatedVideos">AnimatedVideos</Nav.Link>  
+           <Link to="/" className='no-decoration p-3'>Home</Link>
+            <Link to="/Movies" className='no-decoration p-3'>Movies</Link>  
+            <Link to="/AnimatedVideos" className='no-decoration p-3'>AnimatedVideos</Link>  
           </Nav>        
           <Button variant="outline-success fill-success"onClick={() => setModalShow(true)}>Search</Button>
         </Navbar.Collapse>

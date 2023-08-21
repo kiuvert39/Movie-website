@@ -8,6 +8,7 @@ import Movies from './Movies.jsx'
 import AnimatedVideos from "./AnimatedVideos"
 import Post from './Post'
 import Animation from './Animation'
+import NoPage from './NoPage'
 
 const Routs = () => {
   return (
@@ -21,6 +22,7 @@ const Routs = () => {
             <Route path='/AnimatedVideos' element={<AnimatedVideos/>}/>            
             <Route path='/Post' element={<Post/>}/>            
             <Route path='/Animation' element={<Animation/>}/>            
+            <Route path='*' element={<NoPage/>}/>            
         </Routes>
         <Footer/>
       </Router>

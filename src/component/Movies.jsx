@@ -37,8 +37,8 @@ const Movies = () => {
                 return(
                     <div key={movie.id}>
                         <img src={movie.poster} alt="error image"  className='card-width'/>
-                        <h4>{movie.title}</h4>
-                        <p>{movie.duration}</p>
+                        <h5>{movie.title}</h5>
+                        <p>{movie.duration} mins</p>
                         <Button variant="outline-success"><a href={movie.file} className="no-decoration">Download</a></Button>
                     </div>
                 )
