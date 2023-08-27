@@ -28,6 +28,7 @@ function Post ()  {
 
   return (
     <section className="m-top d-flex flex-column justify-content-center align-items-center">
+        <h2>Movie Upload</h2>
         <div className="form-outline mb-4">
           <label className="form-label labeler" htmlFor="Movie Name">Movie Name</label>                      
           <input className="input-style" type="text" onChange={(e) => { setMovieTitle(e.target.value) }} placeholder="Movie Name"/>

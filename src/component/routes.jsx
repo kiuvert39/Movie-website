@@ -20,8 +20,8 @@ const Routs = () => {
             <Route path='/Movies' element={<Movies/>}/>                      
             <Route path='/latestMovies' element={<LatestMovies/>}/>            
             <Route path='/AnimatedVideos' element={<AnimatedVideos/>}/>            
-            <Route path='/Post' element={<Post/>}/>            
-            <Route path='/Animation' element={<Animation/>}/>            
+            <Route path='/postUpload' element={<Post/>}/>            
+            <Route path='/animationUpload' element={<Animation/>}/>            
             <Route path='*' element={<NoPage/>}/>            
         </Routes>
         <Footer/>

@@ -44,7 +44,7 @@ function Recommendations(){
     <div>
         <h3 className='p-2'>Recommendations</h3>
         <MovieCard/>
-        <h4 className='linker'><Link to="/Movies" className='no-decoration'>More Movies</Link></h4>
+        <h4 className="linker btn-outline-light"><Link to="/Movies" className="no-decoration btn btn-outline-light">More Movies</Link></h4>
     </div>
     )
 }
@@ -54,7 +54,7 @@ function SplashImage() {
         <div className="h-100 mt-5">
               <div className="h-100 mt-5 p-5 text-white bg-primary border rounded-3">
                 <h2>Find Great Movies For Your Entertainment</h2>
-                <button className="btn btn-outline-warning">Get Started</button>
+                <button className="btn btn-outline-light"><Link to="/Movies" className="btn btn-outline-light text-dark text-bold">Get Started</Link></button>
               </div>
         </div>
     )

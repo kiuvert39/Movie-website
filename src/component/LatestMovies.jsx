@@ -17,7 +17,7 @@ const LatestMovies = () => {
                 )
              })}
              </div>
-             <h4 className='linker'><Link to='/Movies' className='no-decoration'>More Movies</Link></h4>
+             <h4 className="linker btn-outline-light"><Link to='/Movies' className="no-decoration btn btn-outline-light">More Movies</Link></h4>
     </div>
   )
 }
