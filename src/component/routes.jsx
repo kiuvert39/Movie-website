@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Footer from './footer'
 import NavbarMain from './Navbar'
@@ -13,19 +13,20 @@ import NoPage from './NoPage'
 const Routs = () => {
   return (
     <div>
-      <Router>
-      <NavbarMain/>
-        <Routes>
-            <Route path='/' element={<Home/>}/>                   
-            <Route path='/Movies' element={<Movies/>}/>                      
-            <Route path='/latestMovies' element={<LatestMovies/>}/>            
-            <Route path='/AnimatedVideos' element={<AnimatedVideos/>}/>            
-            <Route path='/postUpload' element={<Post/>}/>            
-            <Route path='/animationUpload' element={<Animation/>}/>            
-            <Route path='*' element={<NoPage/>}/>            
-        </Routes>
+      <HashRouter>
+          <div>
+            <NavbarMain/>
+            <Routes>
+                <Route exact path='/' Component={Home}/>                   
+                <Route path='/Movies' Component={Movies}/>                      
+                <Route path='/latestMovies' Component={LatestMovies}/>            
+                <Route path='/AnimatedVideos' Component={AnimatedVideos}/>            
+                <Route path='/postUpload' Component={Post}/>            
+                <Route path='/animationUpload' Component={Animation}/>            
+            </Routes>
+          </div>
         <Footer/>
-      </Router>
+      </HashRouter>
     </div>
   )
 }
