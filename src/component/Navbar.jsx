@@ -1,17 +1,13 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import SearchMovies from "./SearchModal";
-import AnimatedVideos from './AnimatedVideos'
 import { Link } from "react-router-dom";
 
 
 function NavbarMain(){
 
-    const [modalShow, setModalShow] = React.useState(false);
-    return(
+    return (
     <>
       <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed">
       <Container fluid>
@@ -19,15 +15,14 @@ function NavbarMain(){
       <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav  className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            style={{ maxHeight: '300px' }}
             navbarScroll>
            <Link to="/" className='no-decoration p-3'>Home</Link>
             <Link to="/Movies" className='no-decoration p-3'>Movies</Link>  
-            <Link to="/AnimatedVideos" className='no-decoration p-3'>AnimatedVideos</Link>  
+            <Link to="/AnimatedVideos" className='no-decoration p-3'>Series</Link>   
           </Nav>        
-          <Button variant="outline-success fill-success"onClick={() => setModalShow(true)}>Search</Button>
         </Navbar.Collapse>
-            <SearchMovies show={modalShow} onHide={() => setModalShow(false)}/>
+           {/*  <SearchMovies show={modalShow} onHide={() => setModalShow(false)}/> */}
 
       </Container>
     </Navbar>

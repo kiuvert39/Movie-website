@@ -5,10 +5,10 @@ import Footer from './footer'
 import NavbarMain from './Navbar'
 import LatestMovies from './LatestMovies.jsx'
 import Movies from './Movies.jsx'
-import AnimatedVideos from "./AnimatedVideos"
 import Post from './Post'
-import Animation from './Animation'
 import NoPage from './NoPage'
+import SeriesVideos from './SeriesVideos'
+import Series from './Series'
 
 const Routs = () => {
   return (
@@ -20,9 +20,10 @@ const Routs = () => {
                 <Route exact path='/' Component={Home}/>                   
                 <Route path='/Movies' Component={Movies}/>                      
                 <Route path='/latestMovies' Component={LatestMovies}/>            
-                <Route path='/AnimatedVideos' Component={AnimatedVideos}/>            
+                <Route path='/AnimatedVideos' Component={SeriesVideos}/>            
                 <Route path='/postUpload' Component={Post}/>            
-                <Route path='/animationUpload' Component={Animation}/>            
+                <Route path='/seriesUpload' Component={Series}/>                      
+                <Route path='*' Component={NoPage}/>            
             </Routes>
           </div>
         <Footer/>

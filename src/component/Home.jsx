@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "../component/player.css"
 import data from "../JSON/Recommendation.json"
 import LatestMovies from './LatestMovies.jsx';
@@ -29,7 +29,7 @@ export function MovieCard(){
             {data.map( (value) =>{
                 return(
                   <div key={value.id}>
-                    <img src={value.url} alt="" className='card-width'/>
+                    <img src={value.url} alt="poster" className='card-width'/>
                       <Link to="/Movies" style={{ textDecoration:"none" }}><h4>{value.title}</h4></Link>
                   </div>
                 )

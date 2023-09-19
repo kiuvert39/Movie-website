@@ -11,6 +11,9 @@ body{
     width: 100%;
     margin-bottom: 2px;
 }
+.opacityFooter {
+    opacity: 0.20;
+}
 @media screen and (max-width: 576px) { 
    .mobile {
        flex-direction: column;
@@ -27,7 +30,7 @@ body{
     max-height:250px;
 }
 .m-top {
-    margin-top: 8%;
+    margin-top: 12%;
 } 
 .stack{
     display: flex;
