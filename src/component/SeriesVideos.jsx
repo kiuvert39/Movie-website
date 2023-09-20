@@ -73,7 +73,7 @@ function ShowAnimationSeasons(props) {
         {
            props.movie.file.map(episodes => {
               return (
-                <h6 key={episodes}><a href={episodes}>{episodes}</a></h6>
+                <h6 key={episodes}><a href={episodes} target="_blank">{episodes}</a></h6>
               )
           })
         } 

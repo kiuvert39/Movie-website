@@ -39,7 +39,7 @@ const Movies = () => {
                         <h4>{movie.title}</h4>
                         <p>{movie.duration}</p>
                         <p className='opacity-25' style={{ fontSize: '0.7rem' }}>{movie.genre}</p>
-                        <Button variant="outline-success"><a href={movie.file} className="no-decoration outline-success">Download</a></Button>
+                        <Button variant="outline-success"><a href={movie.file} target="_blank" className="no-decoration outline-success">Download</a></Button>
                     </div>
                 )
              })}
