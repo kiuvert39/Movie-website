@@ -1,74 +1,99 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import "../component/player.css"
+import Button from 'react-bootstrap/Button';
 import { db } from '../Firebase Config/firebase'
-import { collection, addDoc } from "firebase/firestore";
-import "./player.css";
+import { collection, getDocs } from "firebase/firestore";
+import Modal from 'react-bootstrap/Modal';
+import Home from './Home';
 
-function Series ()  {
+const Series = () => {
 
-  const [movieTitle, setMovieTitle] = useState()
-  const [movieLength, setMovieLength] = useState()
-  const [imagePoster, setImagePoster] = useState()
-  const [movieGenre, setMovieGenre] = useState()
-  const [seriesFiles, setSeriesFiles] = useState("")
+  const [movies, setMovies] = useState([])
+
 
   const moviesCollection = collection(db, "animation")
 
-
-
-  const uploadMovie = async () => {
-
-    const episodes = seriesFiles.split(",")
-    try {
-          await addDoc(moviesCollection, {
-             title: movieTitle, 
-             duration: movieLength,
-             poster: imagePoster,
-             genre: movieGenre,
-             file: episodes
-            })
-            window.location.reload(false)
-            console.log(episodes)
-    } catch (err) {
-       console.error(err)
+  useEffect(() => {
+    const getMovies = async () => {
+      try {
+        const data = await getDocs(moviesCollection);
+        const movieList = data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id
+        }))
+        setMovies(movieList)
+      } catch (err) {
+        console.error(err)
+      }
     }
-  }
-
+    getMovies()
+  }, [moviesCollection])
 
   return (
-    <section className="m-top d-flex flex-column justify-content-center align-items-center">
-        <h2>Series Upload</h2>
-        <div className="m-2 d-flex align-items-center justify-center bg-none">
-          <label className="" htmlFor="Movie Name">Movie Name</label>                      
-          <input className="" type="text" onChange={(e) => { setMovieTitle(e.target.value) }} placeholder="Movie Name"/>
+    <>
+      <Home />
+      <div className='p-2'>
+        <h2>Series</h2>
+        <div className='flex-wrap d-flex gap-2'>
+          {movies.map((movie) => {
+            return (
+              <div key={movie.id}>
+                <img src={movie.poster} alt="not found" className='card-width' />
+                <h4>{movie.title}</h4>
+                <p>{movie.duration}</p>
+                <p className='opacity-25' style={{ fontSize: '0.7rem' }}>{movie.genre}</p>
+                <ShowAnimationSeasons episode={movie} movie={movie} />
+              </div>
+            )
+          })}
         </div>
+      </div>
+    </>
+  )
+}
 
-        <div className="m-2 d-flex align-items-center justify-center bg-none">
-          <label className="" htmlFor="Duration">Duration</label>
-          <input className="outline-none border-none" type="text" onChange={(e) => { setMovieLength(Number(e.target.value)) }} placeholder="Duration"/>
-        </div>
 
-        <div className="m-2 d-flex align-items-center justify-center bg-none">
-          <label className="" htmlFor="Image Url">Image Url</label>
-          <input className="" type="text" onChange={(e) => { setImagePoster(e.target.value) }} placeholder="Image Url"/>
-        </div>
+function ShowAnimationSeasons(props) {
 
-        <div className="m-2 d-flex align-items-center justify-center bg-none">
-          <label className="" htmlFor="Genre">Genre</label>
-          <input className="" type="text" onChange={(e) => { setMovieGenre(e.target.value) }} placeholder="Genre"/>
-        </div>
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-        <div className="m-2 d-flex align-items-center justify-center bg-none">
-            <label htmlFor="school items" className="fs-3 d-block m-2">File links seperated by commas</label>
-            <input type="text" className="" onChange={(e) => setSeriesFiles(e.target.value)} name="school items" placeholder="Enter files, with comma"/>
-        </div>
+  return (
+    <>
+      <Button variant="outline-success" className="no-decoration outline-success" onClick={handleShow}>Download</Button>
 
-        <div>
-          <button className="btn btn-outline-primary" onClick={ uploadMovie }>Submit</button>
-        </div>
-    </section>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+
+      >
+        <Modal.Header closeButton>
+          <Modal.Title style={{ color: "black" }}>Downloads</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ background: "black" }}>
+          {
+            props.movie.file.map(episodes => {
+              
+              const episodeNumber = episodes.slice(0, 11)
+              const episodeLink = episodes.split("~")
+ 
+              return (
+                <div className="d-flex" key={episodes}>
+                  <h6> {episodeNumber} <a href={episodeLink[1]} target="_blank" rel="noreferrer"> { episodeLink[1] } </a></h6>
+                </div>
+              )
+            })
+          }
+        </Modal.Body>
+      </Modal>
+    </>
   );
-};
-
-export default Series;
+}
 
 
+
+
+export default Series

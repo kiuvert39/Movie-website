@@ -3,7 +3,7 @@ import { db } from '../Firebase Config/firebase'
 import { addDoc, collection } from "firebase/firestore";
 import "./player.css";
 
-function Post ()  {
+function MoviesPost ()  {
 
   const [movieTitle, setMovieTitle] = useState()
   const [movieLength, setMovieLength] = useState()
@@ -29,7 +29,7 @@ function Post ()  {
   }
 
   return (
-    <section className="m-top d-flex flex-column justify-content-center align-items-center">
+    <section className="margin-up d-flex flex-column justify-content-center align-items-center">
         <h2>Movie Upload</h2>
         <div className="mb-4">
           <label htmlFor="Movie Name">Movie Name</label>                      
@@ -63,4 +63,4 @@ function Post ()  {
   );
 };
 
-export default Post;
+export default MoviesPost;
