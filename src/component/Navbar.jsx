@@ -1,39 +1,44 @@
-import React from "react";
-import Button from 'react-bootstrap/Button';
-import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import SearchMovies from "./SearchModal";
-import AnimatedVideos from './AnimatedVideos'
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
-function NavbarMain(){
-
-    const [modalShow, setModalShow] = React.useState(false);
-    return(
+function NavbarMain() {
+  return (
     <>
-      <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed">
-      <Container fluid>
-      <Navbar.Brand><h1> Movie<mark>Zone</mark></h1></Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav  className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll>
-           <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/Movies">Movies</Nav.Link>  
-            <Nav.Link href="/AnimatedVideos">AnimatedVideos</Nav.Link>  
-          </Nav>        
-          <Button variant="outline-success fill-success"onClick={() => setModalShow(true)}>Search</Button>
-        </Navbar.Collapse>
-            <SearchMovies show={modalShow} onHide={() => setModalShow(false)}/>
-
-      </Container>
-    </Navbar>
+      {['md'].map((expand) => (
+        <Navbar key={expand} expand={expand} className="navbar navbar-dark bg-dark mb-3 fixed z-index-1 d-block"style={{ zIndex: 1 }}>
+          <Container fluid>
+            <Navbar.Brand><h1> Movie<mark>Maze</mark></h1></Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className="no-border"/>
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                  <h1> Movie<mark>Maze</mark></h1>
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body className="bg-dark text-white">
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="#/" className="background-clr p-1">Movies</Nav.Link>
+                  <Nav.Link href="#/Series" className="background-clr p-1">Series</Nav.Link>
+                  <Nav.Link href="#/AboutUs" className="background-clr p-1">About Us</Nav.Link>
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
     </>
-    )
+  );
 }
 
-  
+export default NavbarMain;
 
-export default NavbarMain
+
+
+

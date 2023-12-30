@@ -1,29 +1,33 @@
 import React from 'react'
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Footer from './footer'
 import NavbarMain from './Navbar'
-import LatestMovies from './LatestMovies.jsx'
-import Movies from './Movies.jsx'
-import AnimatedVideos from "./AnimatedVideos"
-import Post from './Post'
-import Animation from './Animation'
+import Movies from './Movies'
+import MoviesPost from './MoviesPost'
+import NoPage from './NoPage'
+import Series from './Series'
+import SeriesPost from './SeriesPost'
+import AboutUs from './About-Us'
 
 const Routs = () => {
   return (
     <div>
-      <Router>
-      <NavbarMain/>
-        <Routes>
-            <Route path='/' element={<Home/>}/>                   
-            <Route path='/Movies' element={<Movies/>}/>                      
-            <Route path='/latestMovies' element={<LatestMovies/>}/>            
-            <Route path='/AnimatedVideos' element={<AnimatedVideos/>}/>            
-            <Route path='/Post' element={<Post/>}/>            
-            <Route path='/Animation' element={<Animation/>}/>            
-        </Routes>
+          <NavbarMain/>
+      <HashRouter>
+          <div>
+            <Routes>
+                <Route path='/' Component={Movies}/>                                
+                <Route path='/Series' Component={Series}/>            
+                <Route exact path='/AboutUs' Component={AboutUs}/>                   
+                <Route path='/moviesUpload' Component={MoviesPost}/>            
+                <Route path='/seriesUpload' Component={SeriesPost}/>                      
+                <Route path='/home' Component={Home}/>                      
+                <Route path='*' Component={NoPage}/>            
+            </Routes>
+          </div>
+      </HashRouter>
         <Footer/>
-      </Router>
     </div>
   )
 }

@@ -1,70 +1,115 @@
- body{
-    background-color:rgb(43, 43, 43);
-    color:whitesmoke;
-} 
-.fixed{
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(43, 43, 43);
+    color: whitesmoke;
+}
+
+.fixed {
     position: fixed;
     top: 0;
     width: 100%;
     margin-bottom: 2px;
 }
-@media screen and (max-width: 576px) { 
-   .mobile {
-       flex-direction: column;
-   }
+
+.btn-hover:hover {
+    background-color: black;
 }
-.moveleft{
-    margin-right:0;
-    margin-top: 5rem;
-    margin-left: 2.5rem;
-   
+
+.opacityFooter {
+    opacity: 0.20;
 }
-.card-width{
-    max-width:220px;
-    max-height:280px;
+
+.no-border {
+    border: none;
+    outline: none;
 }
+
+.bdr-color {
+    border-left: 5px solid blue;
+}
+
+.background-clr:hover {
+    background-color: darkcyan;
+}
+
+.margin-up {
+    margin-top: 16%;
+}
+
+@media screen and (max-width: 576px) {
+    .mobile {
+        flex-direction: column;
+    }
+}
+
+.card-width {
+    max-width: 190px;
+    max-height: 250px;
+}
+
 .m-top {
-    margin-top: 8%;
-} 
-.stack{
+    margin-top: 6%;
+}
+
+.stack {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 2rem;   
+    gap: 2rem;
 }
+
 .no-decoration {
     text-decoration: none;
 }
+
 .input-style {
     border-radius: 10px;
     outline: none;
     margin: 5px;
     font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .labeler {
     font-weight: bold;
     font-size: 1rem;
 }
 
+.linker {
+    display: inline-block;
+    border: 1px solid #0d6efd;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.linker:hover {
+    background-color: white;
+    color: black;
+}
 
 @media screen and (max-width: 488px) {
-    .card-width{
-        max-width:120px;
-        max-height:180px;
+    .card-width {
+        max-width: 120px;
+        max-height: 180px;
         display: grid;
         grid-gap: 30px;
-       grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    .moveleft{
+
+    .moveleft {
         margin-top: 0%;
         margin-left: 0rem;
     }
-    .moveleft{
-        margin-right:0;
+
+    .moveleft {
+        margin-right: 0;
         margin-top: 5rem;
         margin-left: 2rem;
     }
-
 }
-
